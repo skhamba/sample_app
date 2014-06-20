@@ -27,5 +27,6 @@ module SampleApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 	config.secret_key_base = YAML.load(File.open("#{Rails.root}/config/secrets.yml"))[Rails.env]['secret_key_base']
+	config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
